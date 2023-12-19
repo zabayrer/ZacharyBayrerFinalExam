@@ -23,3 +23,9 @@ func _process(delta):
 	
 	#move player
 	position += velocity * speed * delta
+
+
+
+
+func _on_body_entered(body):
+	hide()
