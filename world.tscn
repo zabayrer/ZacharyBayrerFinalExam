@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://duemjd0qhekrw"]
+[gd_scene load_steps=4 format=3 uid="uid://duemjd0qhekrw"]
 
 [ext_resource type="Texture2D" uid="uid://bwmny50vdxvr1" path="res://ZacharyBayrerFinalExam/assets/wallpaperCabin.jpg" id="1_xffca"]
+[ext_resource type="PackedScene" uid="uid://cnwuhfifewn3v" path="res://ZacharyBayrerFinalExam/player.tscn" id="2_v2j1o"]
+[ext_resource type="PackedScene" uid="uid://c2weccpkjga4" path="res://ZacharyBayrerFinalExam/enemy.tscn" id="3_i7qnn"]
 
 [node name="World" type="Node2D"]
 
@@ -8,3 +10,9 @@
 scale = Vector2(0.61, 0.61)
 texture = ExtResource("1_xffca")
 centered = false
+
+[node name="Player" parent="." instance=ExtResource("2_v2j1o")]
+position = Vector2(258, 359)
+
+[node name="Enemy" parent="." instance=ExtResource("3_i7qnn")]
+position = Vector2(895, 359)
