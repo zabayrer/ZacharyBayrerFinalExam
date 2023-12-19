@@ -1,6 +1,10 @@
 extends Area2D
 
 var speed = 300
+
+@onready var enemyHitSound = $"../enemyHit"
+@onready var backgroundMusic = $"../backgroundMusic"
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#create velocity, set it to zero
@@ -18,14 +22,13 @@ func _process(delta):
 	
 	#normalize the velocity
 	velocity = velocity.normalized()
-	print(velocity.length())
-	
 	
 	#move player
 	position += velocity * speed * delta
 
 
-
-
+#when you die
 func _on_body_entered(body):
 	hide()
+	enemyHitSound.play()
+	backgroundMusic.stop()
